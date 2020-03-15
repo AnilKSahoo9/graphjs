@@ -35,10 +35,10 @@ let lineChart = new Chart(drawLine, {
         datasets: [{
             label: 'Expenditure of a student weekly',
             data: [170, 120, 450, 390, 220, 670, 800],
-            backgroundColor: 'violet'
+            //backgroundColor: 'violet'
             //borderColor: 'blue'
             //showLine: 'false'
-            //borderWidth: 6
+            borderWidth: 6
             //borderCapStyle:
             //fill: 'white';
         }]
