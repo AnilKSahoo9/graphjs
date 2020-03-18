@@ -2,32 +2,32 @@
 let lineData = {
     "type": "line",
     "value": [{
-            "name": "Chicken",
-            "orders": 900
+            "xAxisLabel": "Chicken",
+            "yAxisLabel": 900
         },
         {
-            "name": "Mutton",
-            "orders": 200
+            "xAxisLabel": "Mutton",
+            "yAxisLabel": 200
         },
         {
-            "name": "Fish",
-            "orders": 250
+            "xAxisLabel": "Fish",
+            "yAxisLabel": 250
         },
         {
-            "name": "Egg",
-            "orders": 500
+            "xAxisLabel": "Egg",
+            "yAxisLabel": 500
         },
         {
-            "name": "Veg",
-            "orders": 1500
+            "xAxisLabel": "Veg",
+            "yAxisLabel": 1500
         },
         {
-            "name": "Veg kimma",
-            "orders": 1900
+            "xAxisLabel": "Veg kimma",
+            "yAxisLabel": 1900
         },
         {
-            "name": "Veg kimma butter",
-            "orders": 1200
+            "xAxisLabel": "Veg kimma butter",
+            "yAxisLabel": 1200
         }
     ]
 }
@@ -38,32 +38,32 @@ let lineChart = draw(lineData);
 let barData = {
     "type": "bar",
     "value": [{
-            "name": "Chicken",
-            "orders": 900
+            "xAxisLabel": 2010,
+            "yAxisLabel": 400
         },
         {
-            "name": "Mutton",
-            "orders": 200
+            "xAxisLabel": 2011,
+            "yAxisLabel": 200
         },
         {
-            "name": "Fish",
-            "orders": 250
+            "xAxisLabel": 2012,
+            "yAxisLabel": 700
         },
         {
-            "name": "Egg",
-            "orders": 500
+            "xAxisLabel": 2013,
+            "yAxisLabel": 500
         },
         {
-            "name": "Veg",
-            "orders": 1500
+            "xAxisLabel": 2014,
+            "yAxisLabel": 1500
         },
         {
-            "name": "Veg kimma",
-            "orders": 1900
+            "xAxisLabel": 2015,
+            "yAxisLabel": 1900
         },
         {
-            "name": "Veg kimma butter",
-            "orders": 1200
+            "xAxisLabel": 2016,
+            "yAxisLabel": 1200
         }
     ]
 }

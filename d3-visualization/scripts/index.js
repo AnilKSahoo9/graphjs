@@ -5,8 +5,8 @@ const draw = (data) => {
         bottom: 30,
         left: 100
     };
-    const graphWidth = 640 - margin.left - margin.right;
-    const graphHeight = 560 - margin.top - margin.bottom;
+    const graphWidth = 800 - margin.left - margin.right;
+    const graphHeight = 700 - margin.top - margin.bottom;
     const svg = d3
         .select(".canvas")
         .append("svg")
@@ -21,13 +21,13 @@ const draw = (data) => {
 
     const yScale = drawLinearAxis(
         0,
-        d3.max(data.value, d => d.orders),
+        d3.max(data.value, d => d.yAxisLabel),
         graphHeight,
         0,
         graph
     );
     const xScale = drawBandAxis(
-        data.value.map(d => d.name),
+        data.value.map(d => d.xAxisLabel),
         0,
         graphWidth,
         graph,
@@ -35,7 +35,7 @@ const draw = (data) => {
     );
     switch (data.type) {
         case "line":
-            drawLine(xScale, yScale, data.value, "name", "orders", graph);
+            drawLine(xScale, yScale, data.value, "xAxisLabel", "yAxisLabel", graph);
             break;
         case "bar":
             drawBar(
@@ -43,8 +43,8 @@ const draw = (data) => {
                 yScale,
                 graph,
                 data.value,
-                "name",
-                "orders",
+                "xAxisLabel",
+                "yAxisLabel",
                 graphHeight,
                 xScale.bandwidth
             );
@@ -53,42 +53,3 @@ const draw = (data) => {
             break;
     }
 };
-//drawLine(xScale, yScale, data.value, "name", "orders", graph);
-// d3.json("data/travel.json").then(data => {
-//     const margin = {
-//         top: 10,
-//         right: 10,
-//         bottom: 30,
-//         left: 100
-//     };
-//     const graphWidth = 800 - margin.left - margin.right;
-//     const graphHeight = 500 - margin.top - margin.bottom;
-//     const svg = d3
-//         .select(".canvas")
-//         .append("svg")
-//         .attr("width", graphWidth + margin.left + margin.right)
-//         .attr("height", graphHeight + margin.top + margin.bottom);
-
-//     const graph = svg
-//         .append("g")
-//         .attr("width", graphWidth)
-//         .attr("height", graphHeight)
-//         .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-//     const yScale = drawLinearAxis(
-//         0,
-//         d3.max(data, d => d.distance),
-//         graphHeight,
-//         0,
-//         graph
-//     );
-//     const xScale = drawBandAxis(
-//         data.map(d => d.year),
-//         0,
-//         graphWidth,
-//         graph,
-//         graphHeight
-//     );
-
-//     drawLine(xScale, yScale, data, "year", "distance", graph);
-// });
