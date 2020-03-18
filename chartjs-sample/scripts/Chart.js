@@ -1,6 +1,6 @@
 Chart.defaults.global.defaultFontFamily = 'Calibri';
 Chart.defaults.global.defaultFontSize = 20;
-Chart.defaults.global.defaultFontColor = 'Red';
+Chart.defaults.global.defaultFontColor = 'Purple';
 
 //Creating a Bar Chart
 let drawBar = document.getElementById("barChart").getContext("2d");
