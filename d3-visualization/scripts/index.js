@@ -34,10 +34,10 @@ const draw = (data) => {
         graphHeight
     );
     switch (data.type) {
-        case 'line':
+        case "line":
             drawLine(xScale, yScale, data.value, "name", "orders", graph);
             break;
-        case 'bar':
+        case "bar":
             drawBar(
                 xScale,
                 yScale,

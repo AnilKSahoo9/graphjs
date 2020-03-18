@@ -1,4 +1,5 @@
-var lineData = {
+//let line = document.getElementsByClassName('canvas');
+let lineData = {
     "type": "line",
     "value": [{
             "name": "Chicken",
@@ -31,9 +32,10 @@ var lineData = {
     ]
 }
 
-var lineChart = draw(lineData);
+let lineChart = draw(lineData);
 
-var barData = {
+//let bar = document.getElementsByClassName('paint');
+let barData = {
     "type": "bar",
     "value": [{
             "name": "Chicken",
@@ -66,4 +68,4 @@ var barData = {
     ]
 }
 
-var barChart = draw(barData);
+let barChart = draw(barData);
