@@ -1,16 +1,16 @@
 const draw = (data) => {
     const margin = {
-        top: 350,
-        right: 10,
-        bottom: 80,
-        left: 350
+        top: data.top,
+        right: data.right,
+        bottom: data.bottom,
+        left: data.left
     };
-    const graphWidth = 800 - margin.left - margin.right;
-    const graphHeight = 700 - margin.top - margin.bottom;
+    const graphWidth = data.width - margin.left - margin.right;
+    const graphHeight = data.height - margin.top - margin.bottom;
     const radius = Math.min(graphWidth + margin.left + margin.right, graphHeight + margin.top + margin.bottom) / 3;
 
     const svg = d3
-        .select(".canvas")
+        .select("div")
         .append("svg")
         .attr("width", graphWidth + margin.left + margin.right)
         .attr("height", graphHeight + margin.top + margin.bottom);
@@ -26,12 +26,12 @@ const draw = (data) => {
     const pie = d3.pie()(data.value.map(d => d.yAxisLabel));
 
     let path = d3.arc()
-        .outerRadius(radius - 10)
+        .outerRadius(radius)
         .innerRadius(0);
 
     let label = d3.arc()
         .outerRadius(radius)
-        .innerRadius(radius - 80);
+        .innerRadius(radius - data.inLabel);
 
     switch (data.type) {
         case "line":
@@ -76,6 +76,7 @@ const draw = (data) => {
                 graphHeight,
                 xScaleBar.bandwidth
             );
+            break;
         case "pie":
             drawPie(
                 pie,
@@ -86,6 +87,7 @@ const draw = (data) => {
                 (d, x) => data.value[x].xAxisLabel,
                 (d, x) => color(x)
             );
+            break;
         default:
             break;
     }
