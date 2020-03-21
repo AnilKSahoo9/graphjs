@@ -1,4 +1,4 @@
-const draw = (data) => {
+const basicCode = (data) => {
     const margin = {
         top: 10,
         right: 10,
@@ -33,23 +33,4 @@ const draw = (data) => {
         graph,
         graphHeight
     );
-    switch (data.type) {
-        case "line":
-            drawLine(xScale, yScale, data.value, "xAxisLabel", "yAxisLabel", graph);
-            break;
-        case "bar":
-            drawBar(
-                xScale,
-                yScale,
-                graph,
-                data.value,
-                "xAxisLabel",
-                "yAxisLabel",
-                graphHeight,
-                xScale.bandwidth
-            );
-
-        default:
-            break;
-    }
-};
+}
