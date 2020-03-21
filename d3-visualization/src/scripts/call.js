@@ -4,8 +4,8 @@ let lineData = {
     "bottom": 80,
     "left": 30,
     "right": 10,
-    "width": 800,
-    "height": 700,
+    "width": 640,
+    "height": 560,
     "inLabel": 10,
     "value": [{
             "xAxisLabel": "Chicken",
@@ -46,8 +46,8 @@ let barData = {
     "bottom": 80,
     "left": 30,
     "right": 10,
-    "width": 800,
-    "height": 700,
+    "width": 600,
+    "height": 500,
     "inLabel": 10,
     "value": [{
             "xAxisLabel": 2010,

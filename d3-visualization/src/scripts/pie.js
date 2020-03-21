@@ -1,6 +1,5 @@
 const drawPie = (pieData, paths, labels, parentGroup, svg, xAxisLabel, color) => {
 
-
     const arc = parentGroup.selectAll(".arc")
         .data(pieData)
         .enter()
@@ -16,10 +15,4 @@ const drawPie = (pieData, paths, labels, parentGroup, svg, xAxisLabel, color) =>
             return "translate(" + (labels.centroid(d)) + ")";
         })
         .text(xAxisLabel);
-
-    // svg.append("parentGroup")
-    //     .attr("transform", `translate(100,200)`)
-    //     .append("text")
-    //     .text("Hiiii")
-    //     .attr("class", "title")
 }

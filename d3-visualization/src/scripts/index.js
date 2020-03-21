@@ -10,7 +10,7 @@ const draw = (data) => {
     const radius = Math.min(graphWidth + margin.left + margin.right, graphHeight + margin.top + margin.bottom) / 3;
 
     const svg = d3
-        .select("div")
+        .select(".canvas")
         .append("svg")
         .attr("width", graphWidth + margin.left + margin.right)
         .attr("height", graphHeight + margin.top + margin.bottom);
