@@ -6,7 +6,6 @@ let lineData = {
     "right": 10,
     "width": 640,
     "height": 560,
-    "inLabel": 10,
     "value": [{
             "xAxisLabel": "Chicken",
             "yAxisLabel": 900
@@ -40,18 +39,18 @@ let lineData = {
 
 let lineChart = draw(lineData);
 
-let barData = {
-    "type": "bar",
+let columnData = {
+    "type": "column",
     "top": 20,
     "bottom": 80,
     "left": 30,
     "right": 10,
     "width": 600,
     "height": 500,
-    "inLabel": 10,
+    "columnColor": "orange",
     "value": [{
             "xAxisLabel": 2010,
-            "yAxisLabel": 400
+            "yAxisLabel": 750
         },
         {
             "xAxisLabel": 2011,
@@ -80,7 +79,7 @@ let barData = {
     ]
 }
 
-let barChart = draw(barData);
+let columnChart = draw(columnData);
 
 let pieData = {
     "type": "pie",
@@ -90,8 +89,7 @@ let pieData = {
     "right": 10,
     "width": 800,
     "height": 700,
-    "inLabel": 10,
-
+    "inLabel": 130,
     "value": [{
             "xAxisLabel": "Chicken",
             "yAxisLabel": 900
@@ -124,3 +122,45 @@ let pieData = {
 }
 
 let pieChart = draw(pieData);
+
+let barData = {
+    "type": "bar",
+    "top": 15,
+    "bottom": 15,
+    "left": 60,
+    "right": 25,
+    "width": 960,
+    "height": 500,
+    "barColor": "green",
+    "value": [{
+            "yAxisLabel": 2010,
+            "xAxisLabel": 400
+        },
+        {
+            "yAxisLabel": 2011,
+            "xAxisLabel": 200
+        },
+        {
+            "yAxisLabel": 2012,
+            "xAxisLabel": 700
+        },
+        {
+            "yAxisLabel": 2013,
+            "xAxisLabel": 500
+        },
+        {
+            "yAxisLabel": 2014,
+            "xAxisLabel": 1500
+        },
+        {
+            "yAxisLabel": 2015,
+            "xAxisLabel": 1100
+        },
+        {
+            "yAxisLabel": 2016,
+            "xAxisLabel": 1200
+        }
+    ]
+}
+
+let barChart = draw(barData);

@@ -1,12 +1,21 @@
-const drawBar = (xScale, yScale, parentGroup, data, xScaleAttrName, yScaleAttrName, barMaxHeight, barWidth) => {
+const drawBar = (
+    xScale,
+    yScale,
+    parentGroup,
+    data,
+    xScaleAttrName,
+    yScaleAttrName,
+    barWidth,
+    barColor) => {
+
     const rects = parentGroup.selectAll("rect").data(data);
 
     rects
         .enter()
         .append("rect")
-        .attr("width", barWidth)
-        .attr("height", d => barMaxHeight - yScale(d[yScaleAttrName]))
-        .attr("fill", "orange")
-        .attr("x", d => xScale(d[xScaleAttrName]))
-        .attr("y", d => yScale(d[yScaleAttrName]));
-};
+        .attr("y", d => yScale(d[yScaleAttrName]))
+        .attr("height", barWidth)
+        .attr("x", 0)
+        .attr("width", d => xScale(d[xScaleAttrName]))
+        .attr("fill", barColor);
+}
