@@ -117,6 +117,12 @@ const draw = (data) => {
 
         case "bar":
 
+            dataSorted = data.value.sort(function (a, b) {
+                return d3.ascending(a.xAxisLabel, b.xAxisLabel);
+            });
+
+            console.log(dataSorted);
+
             const yScaleBar = drawBandAxis(
                 data.type,
                 data.value.map(d => d.yAxisLabel),
