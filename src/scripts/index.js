@@ -6,6 +6,7 @@ const draw = (data) => {
         bottom: data.bottom,
         left: data.left
     };
+
     const graphWidth = data.width - margin.left - margin.right;
     const graphHeight = data.height - margin.top - margin.bottom;
 
@@ -21,136 +22,55 @@ const draw = (data) => {
         .attr("height", graphHeight)
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
+    dataSorted = data.value.sort((a, b) => d3.ascending(a.xAxisLabel, b.xAxisLabel));
+
     switch (data.type) {
         case "line":
-
-            const yScaleLine = drawLinearAxis(
-                data.type,
-                0,
-                d3.max(data.value, d => d.yAxisLabel),
-                graphHeight,
-                0,
-                graph,
-                graphHeight
-            );
-
-            const xScaleLine = drawBandAxis(
-                data.type,
-                data.value.map(d => d.xAxisLabel),
-                0,
-                graphWidth,
-                graph,
-                graphHeight
-            );
-
-            drawLine(
-                xScaleLine,
-                yScaleLine,
-                data.value,
-                "xAxisLabel",
-                "yAxisLabel",
-                graph);
-
+            drawLine({
+                type: data.type,
+                data: data.value,
+                "xScaleAttrName": "xAxisLabel",
+                "yScaleAttrName": "yAxisLabel",
+                graphHeight: graphHeight,
+                graphWidth: graphWidth,
+                graph: graph,
+                lineColor: data.lineColor
+            });
             break;
 
         case "column":
-
-            const yScaleColumn = drawLinearAxis(
-                data.type,
-                0,
-                d3.max(data.value, d => d.yAxisLabel),
-                graphHeight,
-                0,
-                graph,
-                graphHeight
-            );
-
-            const xScaleColumn = drawBandAxis(
-                data.type,
-                data.value.map(d => d.xAxisLabel),
-                0,
-                graphWidth,
-                graph,
-                graphHeight
-            );
-
-            drawColumn(
-                xScaleColumn,
-                yScaleColumn,
-                graph,
-                data.value,
-                "xAxisLabel",
-                "yAxisLabel",
-                graphHeight,
-                xScaleColumn.bandwidth,
-                data.columnColor
-            );
-
+            drawColumn({
+                graph: graph,
+                data: data.value,
+                "xScaleAttrName": "xAxisLabel",
+                "yScaleAttrName": "yAxisLabel",
+                graphHeight: graphHeight,
+                graphWidth: graphWidth,
+                columnColor: data.columnColor
+            });
             break;
 
         case "pie":
-
-            const radius = Math.min(graphWidth + margin.left + margin.right, graphHeight + margin.top + margin.bottom) / 3;
-
-            const color = d3.scaleOrdinal(d3["schemeSet1"]);
-
-            const pie = d3.pie()(data.value.map(d => d.yAxisLabel));
-
-            let path = d3.arc()
-                .outerRadius(radius)
-                .innerRadius(0);
-
-            let label = d3.arc()
-                .outerRadius(radius)
-                .innerRadius(radius - data.inLabel);
-
-            drawPie(
-                pie,
-                path,
-                label,
-                graph,
-                (d, x) => data.value[x].xAxisLabel,
-                (d, x) => color(x)
-            );
-
+            drawPie({
+                pieData: data.value,
+                radius: Math.min(graphWidth + margin.left + margin.right, graphHeight + margin.top + margin.bottom) / 3,
+                graph: graph,
+                xAxisLabels: (d, x) => data.value[x].xAxisLabel,
+                inLabels: data.inLabel
+            });
             break;
 
         case "bar":
-
-            dataSorted = data.value.sort(function (a, b) {
-                return d3.ascending(a.xAxisLabel, b.xAxisLabel);
+            drawBar({
+                graph: graph,
+                graphHeight: graphHeight,
+                graphWidth: graphWidth,
+                type: data.type,
+                data: data.value,
+                "xScaleAttrName": "xAxisLabel",
+                "yScaleAttrName": "yAxisLabel",
+                barColor: data.barColor,
             });
-
-            console.log(dataSorted);
-
-            const yScaleBar = drawBandAxis(
-                data.type,
-                data.value.map(d => d.yAxisLabel),
-                0,
-                graphHeight,
-                graph,
-                graphHeight
-            );
-            const xScaleBar = drawLinearAxis(
-                data.type,
-                0,
-                d3.max(data.value, d => d.xAxisLabel),
-                0,
-                graphWidth,
-                graph,
-                graphHeight
-            );
-
-            drawBar(
-                xScaleBar,
-                yScaleBar,
-                graph,
-                data.value,
-                "xAxisLabel",
-                "yAxisLabel",
-                yScaleBar.bandwidth(),
-                data.barColor
-            );
 
         default:
             break;

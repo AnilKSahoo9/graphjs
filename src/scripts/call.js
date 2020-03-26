@@ -6,6 +6,7 @@ let lineData = {
     "right": 10,
     "width": 640,
     "height": 560,
+    "lineColor": "blue",
     "value": [{
             "xAxisLabel": "Chicken",
             "yAxisLabel": 900
@@ -45,8 +46,8 @@ let columnData = {
     "bottom": 80,
     "left": 30,
     "right": 10,
-    "width": 600,
-    "height": 500,
+    "width": 640,
+    "height": 560,
     "columnColor": "orange",
     "value": [{
             "xAxisLabel": 2010,
@@ -87,8 +88,8 @@ let pieData = {
     "bottom": 80,
     "left": 350,
     "right": 10,
-    "width": 800,
-    "height": 700,
+    "width": 640,
+    "height": 560,
     "inLabel": 130,
     "value": [{
             "xAxisLabel": "Chicken",
@@ -129,7 +130,7 @@ let barData = {
     "bottom": 15,
     "left": 60,
     "right": 25,
-    "width": 960,
+    "width": 800,
     "height": 500,
     "barColor": "green",
     "value": [{
