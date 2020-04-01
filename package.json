@@ -16,7 +16,9 @@
     "url": "https://github.com/anilsahoo123/learn-javascript/issues"
   },
   "homepage": "https://github.com/anilsahoo123/learn-javascript#readme",
-  "dependencies": {},
+  "dependencies": {
+    "d3": "^5.15.0"
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
