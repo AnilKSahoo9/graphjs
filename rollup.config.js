@@ -4,8 +4,9 @@ import commonjs from "@rollup/plugin-commonjs";
 export default {
   input: "src/scripts/index.js",
   output: {
+    name: "learn-javascript",
     file: "sample/bundle.js",
-    format: "cjs"
+    format: "umd"
   },
   plugins: [
     resolve({
