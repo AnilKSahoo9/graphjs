@@ -27,7 +27,7 @@ export const draw = data => {
     .attr("height", graphHeight)
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-  dataSorted = data.value.sort((a, b) =>
+  const dataSorted = data.value.sort((a, b) =>
     d3.ascending(a.xAxisLabel, b.xAxisLabel)
   );
 

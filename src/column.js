@@ -1,6 +1,6 @@
+import * as d3 from "d3";
 import { drawBandAxis } from "./bandAxis";
 import { drawLinearAxis } from "./linearAxis";
-import * as d3 from "d3";
 
 export const drawColumn = columnArg => {
   const xScale = drawBandAxis({
