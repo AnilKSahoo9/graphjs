@@ -8,12 +8,5 @@ export default {
     file: "sample/bundle.js",
     format: "umd"
   },
-  plugins: [
-    resolve({
-      jsnext: true,
-      main: true,
-      browser: true
-    }),
-    commonjs()
-  ]
+  plugins: [resolve(), commonjs()]
 };
