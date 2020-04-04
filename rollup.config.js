@@ -8,14 +8,14 @@ export default {
     {
       name: "Graph",
       file: "dist/graph.js",
-      format: "umd"
+      format: "umd",
     },
     {
       name: "GraphMin",
       file: "dist/graph.min.js",
-      format: "iife",
-      plugins: [terser()]
-    }
+      format: "umd",
+      plugins: [terser()],
+    },
   ],
-  plugins: [resolve(), commonjs()]
+  plugins: [resolve(), commonjs()],
 };
