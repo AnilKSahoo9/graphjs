@@ -39,7 +39,7 @@ let lineData = {
   ]
 };
 
-let lineChart = learnJavascript.draw(lineData);
+let lineChart = Graph.drawGraph(lineData);
 
 let columnData = {
   type: "column",
@@ -82,7 +82,7 @@ let columnData = {
   ]
 };
 
-let columnChart = learnJavascript.draw(columnData);
+let columnChart = Graph.drawGraph(columnData);
 
 let pieData = {
   type: "pie",
@@ -125,7 +125,7 @@ let pieData = {
   ]
 };
 
-let pieChart = learnJavascript.draw(pieData);
+let pieChart = Graph.drawGraph(pieData);
 
 let barData = {
   type: "bar",
@@ -168,4 +168,4 @@ let barData = {
   ]
 };
 
-let barChart = learnJavascript.draw(barData);
+let barChart = Graph.drawGraph(barData);

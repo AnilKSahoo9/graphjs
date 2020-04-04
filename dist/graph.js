@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = global || self, factory(global.learnJavascript = {}));
+  (global = global || self, factory(global.Graph = {}));
 }(this, (function (exports) { 'use strict';
 
   function ascending(a, b) {
@@ -4491,7 +4491,7 @@
       .attr("y", d => yScale(d[columnArg.yScaleAttrName]));
   };
 
-  const draw = data => {
+  const drawGraph = data => {
     const margin = {
       top: data.top,
       right: data.right,
@@ -4571,7 +4571,7 @@
     }
   };
 
-  exports.draw = draw;
+  exports.drawGraph = drawGraph;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

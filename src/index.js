@@ -4,7 +4,7 @@ import { drawLine } from "./line.js";
 import { drawPie } from "./pie.js";
 import { drawColumn } from "./column.js";
 
-export const draw = data => {
+export const drawGraph = data => {
   const margin = {
     top: data.top,
     right: data.right,

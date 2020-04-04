@@ -1,12 +1,21 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import { terser } from "rollup-plugin-terser";
 
 export default {
   input: "src/index.js",
-  output: {
-    name: "learnJavascript",
-    file: "sample/bundle.js",
-    format: "umd"
-  },
+  output: [
+    {
+      name: "Graph",
+      file: "dist/graph.js",
+      format: "umd"
+    },
+    {
+      name: "GraphMin",
+      file: "dist/graph.min.js",
+      format: "iife",
+      plugins: [terser()]
+    }
+  ],
   plugins: [resolve(), commonjs()]
 };
