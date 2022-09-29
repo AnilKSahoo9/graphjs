@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/anilsahoo123/learn-javascript#readme",
   "dependencies": {
-    "d3": "^5.15.0"
+    "d3": "^7.6.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
